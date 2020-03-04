@@ -41,23 +41,23 @@ public class Tapahtumankuuntelija implements EventHandler {
 
       edellinenKomento = komento;
 
-      int laskunTulos = sovellus.tulos();
-
-      syotekentta.setText("");
-      tuloskentta.setText("" + laskunTulos);
-
-      if (laskunTulos == 0) {
-        nollaa.disableProperty().set(true);
-      } else {
-        nollaa.disableProperty().set(false);
-      }
-
       undo.disableProperty().set(false);
     } else {
       edellinenKomento.peru();
       edellinenKomento = null;
 
       undo.disableProperty().set(true);
-    }                  
+    }
+    
+    int laskunTulos = sovellus.tulos();
+
+    syotekentta.setText("");
+    tuloskentta.setText("" + laskunTulos);
+
+    if (laskunTulos == 0) {
+      nollaa.disableProperty().set(true);
+    } else {
+      nollaa.disableProperty().set(false);
+    }
   }
 }
